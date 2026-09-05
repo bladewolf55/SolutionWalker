@@ -73,7 +73,7 @@ public partial class ImportForm : Form
         {
             var sqliteFilePath = AppSettings.GetSqliteDatabaseFilePath();
             var solutionsPath = textBoxSolutionsFolder.Text;
-            importService.ImportVisualBasicSolutions(sqliteFilePath, solutionsPath);
+            importService.ImportVisualStudioSolutions(sqliteFilePath, solutionsPath);
         }
         catch (Exception ex)
         {

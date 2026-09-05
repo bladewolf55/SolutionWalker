@@ -11,7 +11,7 @@ class Program
     static void Main(string[] args)
     {
 #if DEBUG
-        var argS = Environment.ExpandEnvironmentVariables(@"%UserProfile%\source\repos\");
+        var argS = Environment.ExpandEnvironmentVariables(@"%UserProfile%\source\repos\GitHub repos\SolutionWalker RENAME");
         var argD = Path.Join(argS, "SolutionMapDb", "solutionMap.db");
 
         args = new string[]
@@ -22,11 +22,11 @@ class Program
 #endif
 
         CommandLineParser.CommandLineParser parser = new();
-        parser.ShowUsageHeader = "SolutionMap CLI - A tool to import Visual Basic solutions into a SQLite database.";
+        parser.ShowUsageHeader = "SolutionMap CLI - A tool to import Visual Studio solutions into a SQLite database.";
 
         SwitchArgument showHelp = new('h', "help", "Show help info", false);
 
-        DirectoryArgument solutionsPath = new('s', "solutions-path", "Path to the directory containing Visual Basic solutions. Directory must exist.");
+        DirectoryArgument solutionsPath = new('s', "solutions-path", "Path to the directory containing Visual Studio solutions. Directory must exist.");
         solutionsPath.Optional = false;
         solutionsPath.DirectoryMustExist = true;
 
@@ -76,7 +76,7 @@ class Program
                 Console.WriteLine(e.Message);
             };
 
-            dataImportService.ImportVisualBasicSolutions(sqliteFilePath, solutionFilesPath);
+            dataImportService.ImportVisualStudioSolutions(sqliteFilePath, solutionFilesPath);
         }
         catch (Exception ex)
         {

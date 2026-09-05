@@ -2,5 +2,5 @@
 
 public interface IDataImportService
 {
-    void ImportVisualBasicSolutions(string sqliteFilePath, string solutionsPath);
+    void ImportVisualStudioSolutions(string sqliteFilePath, string solutionsPath);
 }

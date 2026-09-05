@@ -19,7 +19,7 @@ public class DataImportService : IDataImportService
         OnImportStatus(new ImportStatusEventArgs() { Message = message });
     }
 
-    public void ImportVisualBasicSolutions(string sqliteFilePath, string solutionsPath)
+    public void ImportVisualStudioSolutions(string sqliteFilePath, string solutionsPath)
     {
         Directory.CreateDirectory(Path.GetDirectoryName(sqliteFilePath) ?? throw new InvalidOperationException("Invalid database file path"));
 
@@ -32,7 +32,8 @@ public class DataImportService : IDataImportService
 
         //Files
         var service = new SolutionFileService();
-        var solutionFilePaths = Directory.GetFiles(solutionsPath, "*.sln", SearchOption.AllDirectories);
+        var solutionFilePaths = Directory.GetFiles(solutionsPath, "*.sln", SearchOption.AllDirectories).ToList();
+        solutionFilePaths.AddRange(Directory.GetFiles(solutionsPath, "*.slnx", SearchOption.AllDirectories).ToList());
 
         // Import
         SendStatus($"Importing solutions from {solutionsPath}");
