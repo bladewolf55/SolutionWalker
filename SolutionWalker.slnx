@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="SolutionWalker/SolutionWalker.csproj" />
+  <Project Path="SolutionWalkerCli/SolutionWalkerCli.csproj" />
+  <Project Path="SolutionWalkerWinform/SolutionWalkerWinform.csproj" />
+</Solution>

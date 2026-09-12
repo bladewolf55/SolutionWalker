@@ -1,5 +1,0 @@
-<Solution>
-  <Project Path="SolutionMap/SolutionMap.csproj" />
-  <Project Path="SolutionMapCli/SolutionMapCli.csproj" />
-  <Project Path="SolutionMapWinform/SolutionMapWinform.csproj" />
-</Solution>
